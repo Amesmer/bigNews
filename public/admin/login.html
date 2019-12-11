@@ -21,17 +21,17 @@
 
         <div class="login_form_con">
             <div class="login_title"></div>
-            <form class="login_form">
+            <form class="login_form" id="loginform">
                 <i class="iconfont icon-user"></i>
                 <i class="iconfont icon-key"></i>
-                <input type="text" class="input_txt" placeholder="邮箱/手机号">
-                <input type="password" class="input_pass" placeholder="密码">
-                <input type="submit" class="input_sub" value="登 录">
+                <input type="text" class="input_txt" id="username" name="user_name" placeholder="邮箱/手机号">
+                <input type="password" class="input_pass" id="pwd" name="password" placeholder="密码">
+                <input type="submit" class="input_sub" id="submit" value="登 录">
             </form>
         </div>
 
     </div> 
-
+    <script src="../js/login.js"></script>
 </body>
 
 </html>
