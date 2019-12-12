@@ -9,16 +9,15 @@ $.ajax({
     }
 });
 
-//为表单注册提交事件
+//为表单注册提交事件   已发布
 $("#articleBox").on("click",'#issue',function(){
     var formData = new FormData();
-    // console.log($("#rich_content #tinymce p").html());
 	// 将选择到的文件追加到formData对象中
     formData.append('cover', $("#exampleInputFile")[0].files[0]);
     formData.append('title', $("#inputEmail3").val());
     formData.append('type',  $("#formBox").val());
     formData.append('date', $("#dateinput").val());
-    formData.append('content', $("#rich_content").val());
+    formData.append('content',tinyMCE.get('rich_content').getContent().slice(3,-4));
     formData.append('status',"已发布");
 
     // 获取管理员在表单中输入的
@@ -36,18 +35,17 @@ $("#articleBox").on("click",'#issue',function(){
 });
 
 
-//为表单注册提交事件
+//为表单注册提交事件  草稿
 $("#articleBox").on("click",'#draft',function(){
     var formData = new FormData();
-    // console.log($("#rich_content #tinymce p").html());
+
     // 将选择到的文件追加到formData对象中
-    var trr=$("#rich_content_ifr").contents().find("body");
-    console.log(trr)
+    // console.log( tinyMCE.get('rich_content').getContent().slice(3,-4));
     formData.append('cover', $("#exampleInputFile")[0].files[0]);
     formData.append('title', $("#inputEmail3").val());
     formData.append('type',  $("#formBox").val());
     formData.append('date', $("#dateinput").val());
-    formData.append('content', trr.find("p").text());
+    formData.append('content',tinyMCE.get('rich_content').getContent().slice(3,-4));
     formData.append('status',"草稿");
 
     // 获取管理员在表单中输入的
