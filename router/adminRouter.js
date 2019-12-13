@@ -8,8 +8,30 @@ const adminController = require('../controllers/adminController')
 const bodyParser = require('body-parser')
 // 导入multer中间件
 const multer = require('multer')
-const upload = multer({ dest: 'uploads/articles/' })
-const uploadUser = multer({ dest: 'uploads/' })
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/articles/')
+  },
+  filename: function (req, file, cb) {
+    let extName = file.originalname.slice(file.originalname.lastIndexOf('.'))
+    cb(null, file.fieldname + Date.now() + extName)
+  }
+})
+const upload = multer({ storage: storage })
+// const upload = multer({ dest: 'uploads/articles/' })
+
+var storage1 = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+    let extName = file.originalname.slice(file.originalname.lastIndexOf('.'))
+    cb(null, file.fieldname + Date.now() + extName)
+  }
+})
+
+const uploadUser = multer({ storage: storage1 })
+// const uploadUser = multer({ dest: 'uploads/' })
 
 // 注册body-parser中间件
 // parse application/x-www-form-urlencoded
