@@ -303,8 +303,15 @@ module.exports = {
     if (endIndex > article.length) {
       endIndex = article.length
     }
+    // 当前页
+    async (req, res) => {
+      // 当前页
+      let page = +req.query.page;
+      // 如果页码没有传递
+      if (!page || !_.isNumber(page)) page = 1;
+    }
     // 总页数
-    let totalPage = Math.ceil(article.length / perpage) || 1
+    let totalPage = Math.ceil(article.length / perpage) || 1;
     // 返回的数据
     var backData = []
     console.log(startIndex)
@@ -316,6 +323,7 @@ module.exports = {
       msg: '搜索成功',
       code: 200,
       totalPage,
+      page,
       data: backData
     })
   },
@@ -427,7 +435,7 @@ module.exports = {
       if (
         req.file.size > 1024 * 1024 ||
         ['image/gif', 'image/png', 'image/jpeg'].indexOf(req.file.mimetype) ==
-          -1
+        -1
       ) {
         res.send({
           msg: '文件大小或类型不对，请检查',
@@ -779,7 +787,7 @@ module.exports = {
       if (
         req.file.size > 1024 * 1024 ||
         ['image/gif', 'image/png', 'image/jpeg'].indexOf(req.file.mimetype) ==
-          -1
+        -1
       ) {
         res.send({
           msg: '文件大小或类型不对，请检查',
@@ -787,7 +795,7 @@ module.exports = {
         })
         try {
           fs.unlinkSync(path.join(__dirname, '../', req.file.path))
-        } catch (error) {}
+        } catch (error) { }
         return
       }
       try {
@@ -795,7 +803,7 @@ module.exports = {
         fs.unlinkSync(
           path.join(__dirname, '../uploads/', user.user_pic.split('/')[2])
         )
-      } catch (error) {}
+      } catch (error) { }
 
       // console
       //   .log
