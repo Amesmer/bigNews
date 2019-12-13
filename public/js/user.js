@@ -47,8 +47,8 @@ $.ajax({
         $('.a1').val((rep.data.username));
         $('.a2').val((rep.data.nickname));
         $('.a3').val((rep.data.email));
-        // $('#')
-        $('.a4').val((rep.data.user_pic));
+        $('#preview').val(rep.data.user_pic);
+        // $('.a4').val((rep.data.user_pic));
         $('.a4').val((rep.data.password));
 
 
