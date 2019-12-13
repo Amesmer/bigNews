@@ -19,39 +19,48 @@
         <div class="common_title">
             用户信息修改
         </div>
-        <div class="container-fluid common_con">
-            <form class="form-horizontal article_form">
+        <div class="container-fluid common_con" id="modifyBox">
+            <form class="form-horizontal article_form" id="userForm">
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">用户名称：</label>
                     <div class="col-sm-4">
+<<<<<<< HEAD
+                        <input type="text" name="username" class="form-control a1" id="inputEmail3" value="李思思">
+=======
                         <input type="text" class="form-control" id="inputEmail3" value="李思思" name="myname">
+>>>>>>> ba4486e5e297fc48dec4cb63a6d663f0f8176399
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">昵称：</label>
                     <div class="col-sm-4">
+<<<<<<< HEAD
+                        <input type="text" name="nickname" class="form-control a2" id="inputEmail3" value="思思">
+=======
                         <input type="text" class="form-control" id="inputEmail3" value="思思" >
+>>>>>>> ba4486e5e297fc48dec4cb63a6d663f0f8176399
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">邮箱：</label>
                     <div class="col-sm-4">
-                        <input type="text" class="form-control" id="inputEmail3" value="lisisi@126.com">
+                        <input type="text" name="email" class="form-control a3" id="inputEmail3" value="lisisi@126.com">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">用户图标：</label>
                     <div class="col-sm-10">
-                        <img src="images/2.jpg" alt="" class="user_pic">
-                        <input type="file" id="exampleInputFile">
+                        <img src="images/2.jpg" alt="" class="user_pic a4" id="preview">
+                        <input type="file" id="exampleInputFile" name="user_pic">
+                        <!-- <input type="hidden" name="user_pic" id="hiddenImg"> -->
                     </div>
                 </div>
 
                 <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label">密码：</label>
                         <div class="col-sm-4">
-                            <input type="password" class="form-control" id="inputEmail3" value="12345678">
+                            <input type="password" name="password" class="form-control a5" id="inputEmail3" value="12345678">
                         </div>
                     </div>
                
@@ -64,9 +73,60 @@
             </form>
         </div>
     </div>
+    <!-- <script src="../assets/art-template/template-web.js"></script> -->
+    <!-- <script type="text/html" id="modifyTpl">
+        <form class="form-horizontal article_form" id="userForm">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">用户名称：</label>
+                <div class="col-sm-4">
+                    <input type="text" name="username" class="form-control" id="inputEmail3" value="{{data.username}}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">昵称：</label>
+                <div class="col-sm-4">
+                    <input type="text" name="nickname" class="form-control" id="inputEmail3" value="{{data.nickname}}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">邮箱：</label>
+                <div class="col-sm-4">
+                    <input type="text" name="email" class="form-control" id="inputEmail3" value="{{data.email}}">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">用户图标：</label>
+                <div class="col-sm-10">
+                    <img src="{{data.user_pic}}" alt="" class="user_pic" id="preview">
+                    <input type="file" id="exampleInputFile">
+                    <input type="hidden" name="user_pic" id="hiddenImg">
+                </div>
+            </div>
 
+<<<<<<< HEAD
+            <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">密码：</label>
+                    <div class="col-sm-4">
+                        <input type="password" name="password" class="form-control" id="inputEmail3" value="{{data.password}}">
+                    </div>
+                </div>
+           
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">修改</button>
+                </div>
+            </div>
+        </form>
+    
+    
+    </script> -->
+    <script src="../js/user.js"></script>
+=======
     <script src="../js/user.js"></script>
 
+>>>>>>> ba4486e5e297fc48dec4cb63a6d663f0f8176399
 </body>
 
 </html>
