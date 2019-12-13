@@ -18,7 +18,7 @@ $("#articleBox").on("click",'#issue',function(){
     formData.append('type',  $("#formBox").val());
     formData.append('date', $("#dateinput").val());
     formData.append('content',tinyMCE.get('rich_content').getContent().slice(3,-4));
-    formData.append('status',"已发布");
+    formData.append('state',"已发布");
 
     // 获取管理员在表单中输入的
     $.ajax({
@@ -46,7 +46,7 @@ $("#articleBox").on("click",'#draft',function(){
     formData.append('type',  $("#formBox").val());
     formData.append('date', $("#dateinput").val());
     formData.append('content',tinyMCE.get('rich_content').getContent().slice(3,-4));
-    formData.append('status',"草稿");
+    formData.append('state',"草稿");
 
     // 获取管理员在表单中输入的
     $.ajax({
