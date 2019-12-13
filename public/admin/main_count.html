@@ -19,25 +19,25 @@
         <div class="row spannel_list">
             <div class="col-sm-3 col-xs-6">
                 <div class="spannel">
-                    <em>10015</em><span>篇</span>
+                    <em id="articles-total">10015</em><span>篇</span>
                     <b>总文章数</b>
                 </div>
             </div>
             <div class="col-sm-3 col-xs-6">
                 <div class="spannel scolor01">
-                    <em>123</em><span>篇</span>
+                    <em id="articles-daily">123</em><span>篇</span>
                     <b>日新增文章数</b>
                 </div>
             </div>
             <div class="col-sm-3 col-xs-6">
                 <div class="spannel scolor02">
-                    <em>35</em><span>条</span>
+                    <em id="comments-total">35</em><span>条</span>
                     <b>评论总数</b>
                 </div>
             </div>
             <div class="col-sm-3 col-xs-6">
                 <div class="spannel scolor03">
-                    <em>123</em><span>条</span>
+                    <em id="comments-daily">123</em><span>条</span>
                     <b>日新增评论数</b>
                 </div>
             </div>
@@ -59,7 +59,7 @@
         <div class="column_pannel"  id="column_show"></div>
     </div>
 
-    <script>
+    <!-- <script>
         var oChart = echarts.init(document.getElementById('curve_show'));
         var aList_all = [
           {'count':36,'date':'2019-04-13'},
@@ -187,11 +187,12 @@
               trigger: 'item',
               formatter: "{a} <br/>{b} : {c} ({d}%)"
           },
+        //   color  和 名称是对应的
           color:['#5885e8','#13cfd5','#00ce68','#ff9565'],
           legend: {
               x : 'center',
               top:65,
-              data:['奇趣事','会生活','爱旅行','趣美味']
+              data:['奇趣事','会生活','科技','财经']
           },
           toolbox: {
               show : true,
@@ -226,8 +227,8 @@
                   data:[
                       {value:300, name:'奇趣事'},
                       {value:100, name:'会生活'},
-                      {value:260, name:'爱旅行'},                   
-                      {value:180,name:'趣美味'}
+                      {value:260, name:'科技'},                   
+                      {value:180,name:'财经'}
                   ]
               }
           ]
@@ -343,9 +344,9 @@
             };
             oColumn.setOption(oColumnopt);
 
-    </script>
+    </script> -->
 
-
+<script src="../js/main_count.js"></script>
 </body>
 
 </html>
